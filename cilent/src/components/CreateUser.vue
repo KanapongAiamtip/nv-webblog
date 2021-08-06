@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1> Create User</h1>
-      <form v-on:submit.prevent = "createUser">
+      <form v-on:submit.prevent = " createUser">
         <p>name : <input type="text" v-model="user.name"></p>
         <p>lastname : <input type="text" v-model="user.lastname"></p>
         <p>email : <input type="text" v-model="user.email"></p>
@@ -18,7 +18,7 @@
   </div>
 </template>
 <script>
-import UsersService from '@/services/UsersService'
+import UserService from '@/services/UserService'
 
 export default{
   data () {
@@ -35,7 +35,7 @@ export default{
   methods: {
     async createUser () {
       try {
-        await UsersService.post(this.user)
+        await UserService.post(this.user)
           this.$router.push({
             name : 'users'
         })
@@ -47,3 +47,5 @@ export default{
 }
 </script>
 <style scoped>
+
+</style>
